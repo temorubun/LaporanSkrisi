@@ -1,0 +1,189 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Implementasi WebSocket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #1e1e2f;
+            color: #e1e1e6;
+        }
+        h1 {
+            text-align: center;
+            color: #e1e1e6;
+        }
+        h2 {
+            color: #72bcd4;
+            border-bottom: 1px solid #72bcd4;
+            padding-bottom: 5px;
+        }
+        pre {
+            background: #2e2e40;
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #72bcd4;
+        }
+        code {
+            background: #2e2e40;
+            padding: 2px 4px;
+            border-radius: 4px;
+            color: #72bcd4;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        hr {
+            border: none;
+            height: 1px;
+            background: #444;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Laporan Implementasi WebSocket Client untuk Data Real-Time Harga Mata Uang</h1>
+    <div class="section">
+        <h2>1. Pendahuluan</h2>
+        <p>Skrip ini dirancang untuk terhubung ke layanan WebSocket yang menyediakan data harga real-time untuk pasangan mata uang tertentu. Implementasi menggunakan pustaka <code>websocket-client</code> untuk komunikasi antara aplikasi Python dan server WebSocket. Laporan ini menjelaskan cara kerja, proses, dan analisis pelaksanaan skrip tersebut.</p>
+    </div>
+    <div class="section">
+        <h2>2. Deskripsi Skrip</h2>
+        <h3>2.1. Komponen Utama</h3>
+        <p><strong>Kode Skrip:</strong> simpan kode ini dengan nama file <code>websocket_client_realtime.py</code></p>
+        <pre><code>import websocket
+import json
+
+# Fungsi untuk menangani pesan yang diterima dari WebSocket
+def on_message(ws, message):
+    try:
+        data = json.loads(message)
+
+        # Periksa apakah event adalah "price"
+        if data.get("event") == "price":
+            # Menangkap data harga dan simbol
+            symbol = data.get("symbol", "Unknown")
+            price = data.get("price", "N/A")
+            
+            # Cek apakah bid dan ask tersedia dalam pesan
+            bid = data.get("bid", None)
+            ask = data.get("ask", None)
+            
+            # Jika bid dan ask tidak tersedia, hitung berdasarkan spread simulasi
+            if bid is None or ask is None:
+                spread = 0.02  # Spread simulasi
+                bid = round(price - (spread / 2), 3)
+                ask = round(price + (spread / 2), 3)
+
+            # Menampilkan data dalam format yang diinginkan
+            print(f"{symbol} | Bid = {bid} | Ask = {ask}")
+    except Exception as e:
+        print(f"Error processing message: {e}")
+
+# Fungsi untuk menangani error
+def on_error(ws, error):
+    print(f"WebSocket Error: {error}")
+
+# Fungsi untuk menangani koneksi yang ditutup
+def on_close(ws, close_status_code, close_msg):
+    print(f"WebSocket closed. Status Code: {close_status_code}, Message: {close_msg}")
+
+# Fungsi untuk menangani koneksi yang dibuka
+def on_open(ws):
+    # Pesan subscribe
+    subscribe_message = {
+        "action": "subscribe",
+        "params": {
+            "symbols": "USD/JPY"  # Simbol sebagai string
+        }
+    }
+    print("Sending Subscribe Message:", json.dumps(subscribe_message))
+    ws.send(json.dumps(subscribe_message))
+    print("Subscribed to USD/JPY real-time updates.")
+
+# URL WebSocket dengan API Key untuk autentikasi
+websocket_url = "wss://ws.twelvedata.com/v1/quotes/price?apikey=d732f0b5f8a94b7bb365a90a70eb2d57"
+
+# Membuka koneksi WebSocket
+ws = websocket.WebSocketApp(
+    websocket_url,
+    on_message=on_message,
+    on_error=on_error,
+    on_close=on_close,
+)
+ws.on_open = on_open
+
+# Jalankan WebSocket
+print("Connecting to WebSocket for real-time data...")
+ws.run_forever()
+</code></pre>
+    </div>
+    <div class="section">
+        <h2>3. Persyaratan dan Konfigurasi</h2>
+        <h3>3.1. Pustaka Python</h3>
+        <p><code>websocket-client</code><br>Instalasi: <code>pip install websocket-client</code></p>
+        <h3>3.2. API Key</h3>
+        <p>API Key digunakan untuk autentikasi. Pastikan API Key aktif dan memiliki akses ke endpoint WebSocket.</p>
+        <h3>3.3. Langkah Menjalankan Skrip</h3>
+        <ol>
+            <li>Pastikan Python terinstal di komputer Anda.</li>
+            <li>Instal pustaka <code>websocket-client</code> dengan perintah:</li>
+            <pre><code>pip install websocket-client</code></pre>
+            <li>Simpan kode skrip di file Python (misalnya <code>websocket_client_realtime.py</code>).</li>
+            <li>Jalankan skrip dengan perintah:</li>
+            <pre><code>python websocket_client_realtime.py</code></pre>
+        </ol>
+    </div>
+    <div class="section">
+        <h2>4. Proses Pelaksanaan</h2>
+        <ol>
+            <li><strong>Koneksi ke WebSocket:</strong><br>Skrip membuka koneksi ke URL yang ditentukan. Saat berhasil terhubung, permintaan berlangganan dikirimkan.</li>
+            <li><strong>Penerimaan Pesan:</strong><br>Server mengirimkan pesan berisi data harga. Data diproses, termasuk perhitungan bid/ask jika tidak tersedia.</li>
+            <li><strong>Penanganan Kesalahan:</strong><br>Kesalahan selama koneksi atau parsing data ditangani dan ditampilkan ke konsol.</li>
+        </ol>
+    </div>
+    <div class="section">
+        <h2>5. Hasil dan Analisis</h2>
+        <p><strong>Hasil:</strong><br>Berhasil menerima data harga real-time untuk simbol "USD/JPY". Data ditampilkan dalam format: <code>Symbol | Bid = X | Ask = Y</code>.</p>
+        <p><strong>Analisis:</strong></p>
+        <ul>
+            <li>Skrip cukup stabil untuk menerima dan memproses data real-time.</li>
+            <li>Ketergantungan pada API Key membuat implementasi rentan terhadap perubahan kebijakan layanan.</li>
+            <li>Perhitungan bid/ask berbasis spread simulasi memberikan alternatif sederhana untuk data yang hilang.</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>6. Kesimpulan dan Rekomendasi</h2>
+        <p><strong>Kesimpulan:</strong></p>
+        <ul>
+            <li>Skrip berhasil memenuhi tujuan untuk menerima data real-time melalui WebSocket.</li>
+            <li>Implementasi penanganan kesalahan membantu menjaga stabilitas.</li>
+        </ul>
+        <p><strong>Rekomendasi:</strong></p>
+        <ol>
+            <li>Tingkatkan penanganan data untuk mendukung format pesan yang lebih kompleks.</li>
+            <li>Tambahkan mekanisme logging untuk audit dan debugging lebih lanjut.</li>
+            <li>Pastikan API Key selalu diperbarui sesuai dengan kebijakan penyedia layanan.</li>
+        </ol>
+    </div>
+    <div class="section">
+        <h2>7. Lampiran</h2>
+        <h3>7.1. Contoh Output</h3>
+        <pre><code>USD/JPY | Bid = 109.345 | Ask = 109.365
+USD/JPY | Bid = 109.330 | Ask = 109.350
+...</code></pre>
+        <h3>7.2. Referensi</h3>
+        <ul>
+            <li>Dokumentasi pustaka <code>websocket-client</code>.</li>
+            <li>Dokumentasi layanan WebSocket dari Twelve Data.</li>
+        </ul>
+    </div>
+</body>
+</html>

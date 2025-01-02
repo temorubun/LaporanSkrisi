@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #1e1e2f;
+            color: #e1e1e6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #e1e1e6;
+        }
+
+        h2 {
+            color: #72bcd4;
+            border-bottom: 1px solid #72bcd4;
+            padding-bottom: 5px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #2e2e40;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .navbar a {
+            color: #e1e1e6;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover {
+            background-color: #72bcd4;
+            color: #1e1e2f;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: #2e2e40;
+            border: 1px solid #444;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 1px solid #444;
+        }
+
+        .card h3 {
+            color: #72bcd4;
+            margin: 10px 0;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #e1e1e6;
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background-color: #444;
+            border-radius: 5px;
+        }
+
+        .card a:hover {
+            background-color: #72bcd4;
+            color: #1e1e2f;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #2e2e40;
+            color: #e1e1e6;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Proposal Skripsi dan Proyek</h1>
+    <div class="navbar">
+        <p>INTEGRASI METATRADER DAN GPT-4 UNTUK ANALISIS DAN EKSEKUSI TRADING BERBASIS ARTIFICIAL INTELLIGENCE</p>
+    </div>
+
+    <h2>Dokumentasi Skripsi dan Proyek</h2>
+    <p>Semua dokumen yang telah diunggah berhasil dianalisis, termasuk proposal, diagram alur, dan skrip Python untuk integrasi MetaTrader dan analisis AI. <br> Laporan ini mencakup banyak alat bantu dan referensi yang diperlukan untuk mendukung penyelesaian tugas skripsi tentang integrasi MetaTrader dan GPT-4.</p>
+
+    <div class="card-container">
+        <div class="card">
+            <img src="img/skripsi_metatrader_gpt4.png" alt="Systemd Service">
+            <h3>Skripsi Metatrader GPT4</h3>
+            <a href="document/laporan_skripsi_metatrader_gpt4.html" target="_blank">Lihat Laporan</a>
+        </div>
+        <div class="card">
+            <img src="img/Virtual_Environment.png" alt="Virtual Environment">
+            <h3>Virtual Environment</h3>
+            <a href="document/Laporan_Virtual_Environment.html.html" target="_blank">Lihat Laporan</a>
+        </div>
+        <div class="card">
+            <img src="img/websocket_client_realtime_harga.png" alt="WebSocket Client">
+            <h3>WebSocket Client</h3>
+            <a href="document/laporan_websocket_client_realtime_harga.html" target="_blank">Lihat Laporan</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Agung Hendi Temorubun - Politeknik Amamapare Timika</p>
+    </footer>
+</body>
+
+</html>
