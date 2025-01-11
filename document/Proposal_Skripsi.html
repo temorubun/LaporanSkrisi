@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skripsi - Agung Hendi Temorubun</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #1e1e2f;
+            color: #e1e1e6;
+        }
+        h1 {
+            text-align: center;
+            color: #e1e1e6;
+        }
+        h2 {
+            color: #72bcd4;
+            border-bottom: 1px solid #72bcd4;
+            padding-bottom: 5px;
+        }
+        ol, ul {
+            margin-left: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #2e2e40;
+            color: #e1e1e6;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Proposal Skripsi</h1>
+    <h2>Judul</h2>
+    <p>Implementasi ChatGPT Server Berbasis Flask untuk Pengelolaan Server dengan Interaksi Bahasa Alami</p>
+    <h2>Halaman Judul</h2>
+    <p><strong>Nama Mahasiswa:</strong> Agung Hendi Temorubun<br>
+    <strong>Nomor Mahasiswa:</strong> 22512001<br>
+    <strong>Program Studi:</strong> Teknologi Rekayasa Internet<br>
+    <strong>Universitas:</strong> Politeknik Amamapare Timika<br>
+    <strong>Tahun Penulisan:</strong> 2025</p>
+    <h2>BAB I: Pendahuluan</h2>
+    <h3>Latar Belakang</h3>
+    <p>Dalam era digital saat ini, pengelolaan server adalah komponen krusial dalam sistem teknologi informasi. Proses pengelolaan server sering kali membutuhkan keahlian teknis tinggi, seperti penguasaan command-line interface (CLI) dan pengetahuan mendalam tentang sistem operasi. Namun, tidak semua pengguna atau administrator memiliki keahlian tersebut, sehingga menimbulkan kebutuhan akan solusi yang lebih intuitif dan efisien.</p>
+    <p>Artificial Intelligence (AI), khususnya teknologi Natural Language Processing (NLP), memberikan peluang baru untuk menyederhanakan interaksi manusia dengan sistem. Dengan kemampuan memahami dan menghasilkan bahasa alami, teknologi seperti ChatGPT memungkinkan pengguna berinteraksi dengan server melalui percakapan yang intuitif, tanpa memerlukan perintah teknis yang rumit. Penelitian ini memanfaatkan framework Flask untuk mengimplementasikan antarmuka web yang mendukung pengelolaan server berbasis NLP.</p>
+    <h3>Rumusan Masalah</h3>
+    <ul>
+        <li>Bagaimana cara mengintegrasikan ChatGPT dengan framework Flask untuk pengelolaan server?</li>
+        <li>Sejauh mana interaksi berbasis bahasa alami dapat meningkatkan efisiensi pengelolaan server?</li>
+        <li>Apa saja tantangan dan solusi dalam implementasi sistem ini?</li>
+    </ul>
+    <h3>Tujuan Penelitian</h3>
+    <ul>
+        <li>Membangun sistem pengelolaan server berbasis Flask yang terintegrasi dengan ChatGPT.</li>
+        <li>Mengevaluasi efektivitas interaksi berbasis bahasa alami dalam pengelolaan server.</li>
+        <li>Mengidentifikasi tantangan teknis dan memberikan solusi implementasi.</li>
+    </ul>
+    <h2>BAB II: Landasan Teori</h2>
+    <h3>2.1 Teknologi Natural Language Processing (NLP)</h3>
+    <p>NLP adalah cabang dari kecerdasan buatan yang fokus pada interaksi antara komputer dan manusia menggunakan bahasa alami. ChatGPT adalah salah satu aplikasi NLP yang mampu memahami konteks percakapan dan menghasilkan respons yang relevan.</p>
+    <h3>2.2 Flask sebagai Framework Web</h3>
+    <p>Flask adalah framework web berbasis Python yang ringan dan modular, sering digunakan untuk membangun aplikasi berbasis API. Keunggulan Flask terletak pada fleksibilitasnya untuk mengintegrasikan pustaka eksternal seperti OpenAI API.</p>
+    <h3>2.3 Pengelolaan Server</h3>
+    <p>Pengelolaan server mencakup tugas-tugas seperti monitoring status server, manajemen log, dan pengaturan ulang layanan. Sistem tradisional sering menggunakan CLI, namun pendekatan ini dapat digantikan dengan antarmuka berbasis bahasa alami.</p>
+    <h2>BAB III: Metodologi Penelitian</h2>
+    <h3>3.1 Desain Sistem</h3>
+    <p>Sistem ini terdiri dari:</p>
+    <ul>
+        <li><strong>Frontend:</strong> Antarmuka berbasis web yang memungkinkan pengguna memasukkan perintah dalam bahasa alami.</li>
+        <li><strong>Backend:</strong> Server Flask yang memproses input pengguna dan berkomunikasi dengan ChatGPT.</li>
+        <li><strong>Layer Pengelolaan Server:</strong> Komponen untuk menjalankan perintah terkait server berdasarkan respons dari ChatGPT.</li>
+    </ul>
+    <h3>3.2 Langkah Implementasi</h3>
+    <ul>
+        <li><strong>Persiapan Lingkungan:</strong> Instalasi Flask, OpenAI API, dan pustaka pendukung.</li>
+        <li><strong>Pengembangan Backend:</strong> Integrasi Flask dengan ChatGPT API.</li>
+        <li><strong>Pembangunan Antarmuka Web:</strong> Desain halaman untuk memasukkan dan menampilkan perintah serta respons.</li>
+        <li><strong>Uji Coba:</strong> Pengujian sistem dengan berbagai skenario pengelolaan server.</li>
+    </ul>
+    <h2>BAB IV: Hasil dan Pembahasan</h2>
+    <h3>4.1 Hasil Implementasi</h3>
+    <p>Sistem berhasil diimplementasikan dengan fitur:</p>
+    <ul>
+        <li>Mengidentifikasi status server.</li>
+        <li>Menjalankan perintah seperti <em>restart</em> atau <em>stop</em> layanan.</li>
+        <li>Menganalisis log server dan memberikan saran perbaikan.</li>
+    </ul>
+    <h3>4.2 Pembahasan</h3>
+    <p>Penggunaan ChatGPT untuk pengelolaan server berbasis bahasa alami terbukti mempermudah pengguna non-teknis dalam menjalankan tugas administrasi. Namun, beberapa tantangan ditemukan, seperti keterbatasan model dalam memahami perintah teknis yang kompleks.</p>
+    <h2>BAB V: Kesimpulan dan Saran</h2>
+    <h3>Kesimpulan</h3>
+    <ul>
+        <li>Integrasi ChatGPT dengan Flask memungkinkan pengelolaan server yang lebih intuitif dan efisien.</li>
+        <li>Interaksi berbasis bahasa alami dapat mengurangi ketergantungan pada keahlian teknis tinggi.</li>
+        <li>Sistem ini memiliki potensi untuk diadopsi dalam berbagai lingkungan TI, meskipun masih memerlukan optimasi lebih lanjut.</li>
+    </ul>
+    <h3>Saran</h3>
+    <ul>
+        <li>Mengembangkan model NLP yang lebih spesifik untuk pengelolaan server.</li>
+        <li>Menambahkan fitur keamanan untuk mencegah akses tidak sah.</li>
+        <li>Melakukan pengujian pada skala sistem yang lebih besar.</li>
+    </ul>
+    <h2>Daftar Pustaka</h2>
+    <ul>
+        <li>OpenAI. (2023). <em>ChatGPT API Documentation.</em> [Online]</li>
+        <li>Grinberg, M. (2018). <em>Flask Web Development: Developing Web Applications with Python.</em> O'Reilly Media.</li>
+        <li>Jurafsky, D., & Martin, J. H. (2019). <em>Speech and Language Processing.</em> Pearson.</li>
+    </ul>
+    <h2>Lampiran</h2>
+    <p>Kode Program dan Dokumentasi Teknis</p>
+    <footer>© 2025 Agung Hendi Temorubun</footer>
+</body>
+</html>
