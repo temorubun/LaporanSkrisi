@@ -1,0 +1,195 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Administrator Server</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #1e1e2f;
+            color: #e1e1e6;
+        }
+        h1 {
+            text-align: center;
+            color: #e1e1e6;
+        }
+        h2 {
+            color: #72bcd4;
+            border-bottom: 1px solid #72bcd4;
+            padding-bottom: 5px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #2e2e40;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .navbar a {
+            color: #e1e1e6;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .navbar a:hover {
+            background-color: #72bcd4;
+            color: #1e1e2f;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            background-color: #2e2e40;
+            border: 1px solid #444;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            padding: 15px;
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 1px solid #444;
+        }
+        .card h3 {
+            color: #72bcd4;
+            margin: 10px 0;
+        }
+        .card a {
+            text-decoration: none;
+            color: #e1e1e6;
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background-color: #444;
+            border-radius: 5px;
+        }
+        .card a:hover {
+            background-color: #72bcd4;
+            color: #1e1e2f;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #2e2e40;
+            color: #e1e1e6;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Tugas Administrator Server</h1>
+<h2>Pendahuluan</h2>
+<p>Administrator server bertanggung jawab untuk memastikan bahwa infrastruktur teknologi informasi berjalan lancar, aman, dan efisien. Tugas-tugas yang dilakukan dapat dibagi menjadi dua kategori utama, yaitu tugas dasar dan tugas advance. Berikut adalah rincian dari masing-masing tugas tersebut.</p>
+
+<h2>I. Tugas Dasar Administrator Server</h2>
+<ol>
+    <li><strong>Manajemen Akun Pengguna</strong>
+        <ul>
+            <li>Membuat, menghapus, dan mengelola akun pengguna.</li>
+            <li>Menetapkan hak akses dan izin untuk setiap pengguna.</li>
+        </ul>
+    </li>
+    <li><strong>Monitoring Performa Server</strong>
+        <ul>
+            <li>Memantau penggunaan CPU, memori, dan penyimpanan.</li>
+            <li>Meninjau log server untuk mengidentifikasi masalah potensial.</li>
+        </ul>
+    </li>
+    <li><strong>Backup dan Pemulihan Data</strong>
+        <ul>
+            <li>Melakukan backup rutin untuk data dan sistem.</li>
+            <li>Memastikan proses pemulihan data dapat dilakukan dengan cepat saat dibutuhkan.</li>
+        </ul>
+    </li>
+    <li><strong>Pembaruan Sistem</strong>
+        <ul>
+            <li>Menginstal pembaruan sistem operasi dan perangkat lunak secara berkala.</li>
+            <li>Menangani patch keamanan untuk mencegah kerentanan.</li>
+        </ul>
+    </li>
+    <li><strong>Keamanan Dasar</strong>
+        <ul>
+            <li>Mengonfigurasi firewall dasar.</li>
+            <li>Memastikan penggunaan kata sandi yang kuat dan kebijakan autentikasi pengguna.</li>
+        </ul>
+    </li>
+    <li><strong>Konfigurasi Jaringan</strong>
+        <ul>
+            <li>Mengatur koneksi jaringan, termasuk alamat IP, DNS, dan gateway.</li>
+            <li>Menyelesaikan masalah konektivitas sederhana.</li>
+        </ul>
+    </li>
+</ol>
+
+<h2>II. Tugas Advance Administrator Server</h2>
+<ol>
+    <li><strong>Otomasi dan Scripting</strong>
+        <ul>
+            <li>Mengembangkan skrip untuk mengotomasi tugas rutin seperti monitoring, backup, dan deployment.</li>
+            <li>Menggunakan alat otomatisasi seperti Ansible, Puppet, atau Chef.</li>
+        </ul>
+    </li>
+    <li><strong>Manajemen Infrastruktur Skala Besar</strong>
+        <ul>
+            <li>Mengelola server dalam lingkungan berbasis cloud seperti AWS, Azure, atau Google Cloud.</li>
+            <li>Mengatur containerization dengan Docker dan Kubernetes.</li>
+        </ul>
+    </li>
+    <li><strong>Keamanan Lanjutan</strong>
+        <ul>
+            <li>Mengimplementasikan solusi keamanan tingkat lanjut seperti IDS/IPS (Intrusion Detection and Prevention Systems).</li>
+            <li>Mengelola sertifikat SSL/TLS dan enkripsi data.</li>
+        </ul>
+    </li>
+    <li><strong>Optimisasi Performa</strong>
+        <ul>
+            <li>Melakukan tuning sistem untuk mengoptimalkan performa aplikasi.</li>
+            <li>Mengelola database tingkat lanjut, termasuk replikasi dan sharding.</li>
+        </ul>
+    </li>
+    <li><strong>Penanganan Insiden dan Pemulihan Bencana</strong>
+        <ul>
+            <li>Merancang dan mengimplementasikan strategi pemulihan bencana.</li>
+            <li>Menangani serangan siber seperti DDoS dan malware.</li>
+        </ul>
+    </li>
+    <li><strong>Pengelolaan Sistem Berbasis CI/CD</strong>
+        <ul>
+            <li>Membangun pipeline Continuous Integration/Continuous Deployment untuk mempercepat pengembangan aplikasi.</li>
+            <li>Mengintegrasikan alat seperti Jenkins atau GitLab CI.</li>
+        </ul>
+    </li>
+    <li><strong>Pemantauan dan Analitik Tingkat Lanjut</strong>
+        <ul>
+            <li>Menggunakan alat monitoring seperti Prometheus, Grafana, atau Nagios untuk analitik mendalam.</li>
+            <li>Membuat laporan kinerja dan penggunaan sumber daya.</li>
+        </ul>
+    </li>
+    <li><strong>Audit dan Kepatuhan</strong>
+        <ul>
+            <li>Melakukan audit sistem untuk memastikan kepatuhan terhadap standar industri (misalnya, GDPR, HIPAA).</li>
+            <li>Menyiapkan dokumentasi kebijakan dan prosedur keamanan.</li>
+        </ul>
+    </li>
+</ol>
+
+<h2>Kesimpulan</h2>
+<p>Tugas dasar dan advance yang dilakukan oleh administrator server mencerminkan tingkat tanggung jawab yang berbeda, dari memastikan kelancaran operasional hingga menangani tantangan teknis yang kompleks. Kemampuan untuk menjalankan kedua jenis tugas ini dengan efektif sangat penting untuk menjaga keberlanjutan dan keamanan sistem teknologi informasi.</p>
+
+<h2>Rekomendasi</h2>
+<p>Administrator server disarankan untuk terus meningkatkan keterampilan mereka melalui pelatihan, sertifikasi, dan pengalaman praktis untuk menghadapi tantangan teknologi yang semakin kompleks.</p>
+<footer> <p>&copy; 2025 Agung Hendi Temorubun - Politeknik Amamapare Timika</p> </footer>
+</body>
+</html>
